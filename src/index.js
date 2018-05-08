@@ -49,7 +49,6 @@ feature_5.merge(hotfix);
 // Finish Hotfix
 hotfix.merge(release)
     .merge(develop, {labelFont: "normal 12pt Arial"})
-    .merge(release)
     .merge(master, { tag: "v1.1", color: "#FA8367" });
 
 // Finish more work on Feature branches for Release
