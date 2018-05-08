@@ -1,0 +1,14 @@
+{
+  "name": "git-branching",
+  "version": "1.0.0",
+  "description": "Git branching models",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gitgraph.js": "^1.11.4"
+  }
+}
