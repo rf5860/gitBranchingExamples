@@ -30,7 +30,7 @@ const feature_b = release.branch({ name: "feature/b", column: 6 });
 // Do work on 'feature/a' and 'feature/b'
 feature_a.commit({ labelFont: DEFAULT_FONT }).commit().commit().commit();
 feature_b.commit({ labelFont: DEFAULT_FONT }).commit();
-// Create 'hotfix/1.1'and 'feature/c' (Intende for Hotfix)
+// Create 'hotfix/1.1'and 'feature/c' (Intended for Hotfix)
 const hotfix = master.branch({ name: "hotfix/1.1", column: 1 });
 // Merge 'feature/b' to 'release/2.0'
 feature_a.merge(release, { labelFont: DEFAULT_FONT });

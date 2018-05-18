@@ -1,4 +1,3 @@
-https://fcbtech.atlassian.net/wiki/spaces/EADS/pages/146898945/Identity+Provider+Configuration
 const gitGraph = new GitGraph({
     orientation: "horizontal",
     mode: "compact",
@@ -29,7 +28,7 @@ const feature_b = release.branch({ name: "feature/b", column: 5 });
 // Do work on 'feature/a' and 'feature/b'
 feature_a.commit({ labelFont: DEFAULT_FONT }).commit().commit().commit();
 feature_b.commit({ labelFont: DEFAULT_FONT }).commit();
-// Create 'hotfix/1.1'and 'feature/c' (Intende for Hotfix)
+// Create 'hotfix/1.1'and 'feature/c' (Intended for Hotfix)
 const hotfix = master.branch({ name: "hotfix/1.1", column: 1 });
 // Merge 'feature/b' to 'release/2.0'
 feature_a.merge(release, { labelFont: DEFAULT_FONT });
@@ -39,8 +38,8 @@ feature_c.commit({ labelFont: DEFAULT_FONT })
     .commit()
     .merge(hotfix, { labelFont: DEFAULT_FONT, color: HOTFIX_COLOR });
 // Finish 'hotfix/1.1' (Merge it to 'master' through to 'release/2.0')
-hotfix.merge(release, { labelFont: DEFAULT_FONT , color: RELEASE_COLOR })
-    .merge(master, { tag: "v1.1", color: MASTER_COLOR });
+hotfix.merge(master, { tag: "v1.1", color: MASTER_COLOR });
+master.merge(release, { labelFont: DEFAULT_FONT, color: RELEASE_COLOR });
 // Do more work on 'feature/b' then merge to 'release/2.0'
 feature_b.commit()
     .commit()
