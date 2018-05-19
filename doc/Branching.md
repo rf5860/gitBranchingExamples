@@ -22,14 +22,14 @@ One of the big advantages for Git Flow, is the tooling support. The below shows 
 
 ### Git Flow Command
 
-The current model - [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/) - has tooling support that is convenient. Here is list of equivalent commands.
+The current model - [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) - has tooling support that is convenient. Here is list of equivalent commands.
 
 |             Git Flow Command             | Commands Run | New Branch Commands | Commands |
 | ---------------------------------------- | ------------ | ------------------- |
 | git flow init                            |   git init<br>git commit --allow-empty -m "Initial commit"<br>git checkout -b develop master           | git init<br>git commit --allow-empty -m "Initial commit"<br>git checkout -b develop master | Only needs to be run once on new repositories | 
-| git flow feature start MYFEATURE         | git checkout -b feature/MYFEATURE develop             | git checkout -b feature/MYFEATURE develop                    |git checkout -b feature/MYFEATURE [master|release|integration|hotfix] | You can use the following alias for convenience<br>`git config --global alias.flow-feature "!flowFeature() { git checkout -b feature/$1 ${$2:-master}; }; flowFeature"`<br>Usage: `git flow-feature ENAB-1` 
-| git flow feature publish MYFEATURE       | git checkout feature/MYFEATURE<br>git push origin feature/MYFEATURE             | git checkout feature/MYFEATURE<br>git push origin feature/MYFEATURE                    |
-| git flow feature finish MYFEATURE        | git checkout develop<br>git merge --no-ff feature/MYFEATURE<br>git branch -d feature/MYFEATURE             | N/A (Code is only pulled after review, via BitBucket)                    |
+| git flow feature start MYFEATURE         | git checkout -b feature/MYFEATURE develop             | git checkout -b feature/MYFEATURE develop                    |git checkout -b feature/MYFEATURE [master|release|integration|hotfix] | You can use the following alias for convenience<br>`git config --global alias.flow-feature "!flowFeature() { git checkout -b feature/$1 ${$2:-master}; }; flowFeature"`<br>Usage: `git flow-feature ENAB-1` |
+| git flow feature publish MYFEATURE       | git checkout feature/MYFEATURE<br>git push origin feature/MYFEATURE             | git push -u origin feature/MYFEATURE:feature/MYFEATURE | You can use the following alias for convenience<br>`git config --global alias.flow-feature "!flowFeaturePublish() { "git push -u origin feature/${1}:feature/${1}" }; flowFeaturePublish"`<br>Usage: `git flow-feature-publish ENAB-1`  |
+| git flow feature finish MYFEATURE        | git checkout feature/MYFEATURE<br>git pull<br>git merge --no-ff feature/MYFEATURE<br>git branch -d feature/MYFEATURE             | N/A (Code is only pulled after review, via BitBucket)                    |
 | git flow feature pull origin MYFEATURE   |              |                     |
 | git flow release start RELEASE [BASE]    |              |                     |
 | git flow release publish RELEASE         |              |                     |
