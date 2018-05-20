@@ -20,7 +20,7 @@ gitGraph.template.commit.spacingX = -30;
 gitGraph.template.commit.message = { font: "normal 34pt Arial" };
 
 // Create 'master' and 'release/2.0
-const master = gitGraph.branch({ name: "master", column: 2 }).commit({ tag: "v1.0" , labelFont: DEFAULT_FONT });
+const master = gitGraph.branch({ name: "master", column: 2 }).commit({ tag: "v1.0" , labelFont: DEFAULT_FONT }).commit();
 const release = master.branch({ name: "release/2.0", column: 3 });
 // Create 'feature/a' and 'feature/b'
 const feature_a = release.branch({ name: "feature/a", column: 4 });

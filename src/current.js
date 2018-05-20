@@ -22,7 +22,7 @@ gitGraph.template.commit.message = { font: "normal 34pt Arial" };
 
 // Create 'master', 'develop' and 'release/2.0
 const master = gitGraph.branch({ name: "master", column: 2 }).commit({ tag: "v1.0" , labelFont: DEFAULT_FONT });
-const develop = master.branch({ name: "develop", column: 3 });
+const develop = master.branch({ name: "develop", column: 3 }).commit({ labelFont: DEFAULT_FONT });
 const release = develop.branch({ name: "release/2.0", column: 4 });
 // Create 'feature/a' and 'feature/b'
 const feature_a = release.branch({ name: "feature/a", column: 5 });
