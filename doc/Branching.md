@@ -143,7 +143,7 @@ function hotfixStart() (
   git push -u origin hotfix/$1;
 )
 # Replacement for: `mvn jgitflow:hotfix-finish VERSION`
-hotfixFinish() (
+function hotfixFinish() (
   set -e; # Exit on first error
   git checkout hotfix/$1; git pull;
   mvn versions:set -DnewVersion=$1 -DgenerateBackupPoms=false;
